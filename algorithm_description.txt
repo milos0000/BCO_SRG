@@ -40,12 +40,8 @@ Random selection in constant time algorithm:
 6. delete the element you inserted and return the value in (5)
 When 'o' transformations are finished, we call Jacobi algorithm again to see if we found our solution.
 
-complexity:
-construction phase - O(b * n^3) Cube complexity comes from Jacobi algorithm
-backward pass - O(b * n^2) 
-forward pass - O(b * n^3) Cube complexity comes from Jacobi algorithm 
-               O(b * n^5) If checking for solution is implemented after each of 'o' transformations
+Credits:
 
-links:
 Jacobi algoritm: https://people.sc.fsu.edu/~jburkardt/c_src/jacobi_eigenvalue/jacobi_eigenvalue.html
+
 getting random element from a set in constant time: Matovich https://stackoverflow.com/questions/12761315/random-element-from-unordered-set-in-o1/31522686#31522686
