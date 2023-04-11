@@ -3,8 +3,8 @@ Spectral reconstruction of graphs using Bee Colony Optimization metaheuristic
 
 ## Algorithm description
 The first graph representation is the one using classic C arrays. The graphs are representated with variable As (array of arrays).
-For each bee we have binary array of n*n size. (n corresponding to graph nodes)
-If i-th and j-th nodes of a graph are connected, then (i*n + j)-th position (and therefore its symmetric position) in array is equal to 1, else 0.
+For each bee we have binary array of n * n size. (n corresponding to graph nodes)
+If i-th and j-th nodes of a graph are connected, then (i * n + j)-th position (and therefore its symmetric position) in array is equal to 1, else 0.
 We chose one dimensional array for storing matrix because version of Jacobi algorithm for calculating eigenvalues ,which we found on the internet, demands it.
 
 Our algorithm heavily relies on powerful data structures vector and unordered_set from c++, which are included in 
@@ -29,7 +29,7 @@ It's linearly dependent on size of a set.
 
 Forward pass is the main piece of our code. That's the place where we do the most of transformations.
 Firstly we choose a random value for variable 'o' which will contain a number of transformations per iteration.
-Its range is (1, 2*m), add explanation for 2*m. Then we tranfsorm a solution 'o' times by substituting one edge currently in graph with another not existing.
+Its range is (1, 2 * m), add explanation for 2 * m. Then we tranfsorm a solution 'o' times by substituting one edge currently in graph with another not existing.
 
 Substituting is done in two parts: adding edge and deleting edge.
 When selecting edge to be erased, we randomly choose element from 'non_iso' set and then one random neighbour of that element from 'neigh_sets'.
@@ -41,7 +41,7 @@ Random selection in constant time algorithm:
 2. generate a random value_type element
 3. if already in the unordered set return it else insert it
 4. get an iterator it on this element
-5. get the random element as *(it++) (and if *it is the last element the get the first element)
+5. get the random element as \*(it++) (and if \*it is the last element the get the first element)
 6. delete the element you inserted and return the value in (5)
 When 'o' transformations are finished, we call Jacobi algorithm again to see if we found our solution.
 
