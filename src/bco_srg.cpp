@@ -1,4 +1,4 @@
-#include "bco_srg.hpp"
+#include "../include/bco_srg.hpp"
 #include <cfloat>
 #include <cmath>
 #include <cstdio>
@@ -48,16 +48,16 @@ void solution(double *As, double *sp, int n, double time_taken, double ygmin, in
 
 /* MAIN */
 int bco_srg(int seed, int bees, int NC) {
-    if ((fin = fopen("input.txt", "r")) == NULL) {
+    if ((fin = fopen("res/input.txt", "r")) == NULL) {
         printf("Open INPUT.DAT.\n");
         exit(0);
     }
 
-    if ((fout = fopen("output.txt", "a")) == NULL) {
+    if ((fout = fopen("res/output.txt", "a")) == NULL) {
         printf("Open %s.\n", "output.dat");
         exit(0);
     }
-    if ((matr_spectrum = fopen("graphs_output.txt", "a")) == NULL) {
+    if ((matr_spectrum = fopen("res/graphs_output.txt", "a")) == NULL) {
         printf("Open %s.\n", "graphs_output.dat");
         exit(0);
     }

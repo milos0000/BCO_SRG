@@ -4,7 +4,7 @@
 #include <cstring>
 #include <ctime>
 
-#include "jacobi_eigenvalue.hpp"
+#include "../include/jacobi_eigenvalue.hpp"
 
 /******************************************************************************/
 
